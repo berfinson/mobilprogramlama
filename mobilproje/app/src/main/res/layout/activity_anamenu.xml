@@ -7,23 +7,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back"
     android:orientation="vertical"
     android:layout_gravity="center"
-
     >
 
     <LinearLayout
-        android:layout_weight="1"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+        android:gravity="center"
+       style="@style/card"
         >
         <ImageView
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:src="@drawable/pp"
+            android:background="@drawable/bg_card"
             android:padding="10dp"
 
             />
@@ -31,23 +31,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kullanıcı Adı"
-            android:padding="20dp"
             android:textSize="30sp"
             />
-        <Button
-            android:layout_width="20dp"
-            android:layout_height="20dp"
 
-            />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
 
-        >
+
+
+
+    <LinearLayout
+      style="@style/card"
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,63 +53,63 @@
             android:textSize="24dp"
             android:background="#69BC7F"
             />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="450dp">
-
-        <TextView
+        <ListView
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="İlaçlar Eklenecek"
             android:layout_gravity="center"
             android:gravity="center"
             android:textSize="30dp"
             />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="İlaçlar"
+                android:id="@+id/BtnIlaclar"
+                android:onClick="onclickGoToIlaclar"
+
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+
+                android:text="Eczane"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="Notlar"
+                android:id="@+id/BtnNotlar"
+                android:onClick="onclickGoToNotlar"
+                />
+
+            <ImageView
+                android:id="@+id/BtnIlacEkle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_user"
+                android:layout_weight="1"
+                android:onClick="onclickGoToIlacEkle"
+                android:text="İlaç Ekle" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:background="@color/back"
-        android:layout_gravity="center"
-        android:gravity="center"
-        >
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="İlaçlar"
-            android:id="@+id/BtnIlaclar"
-            android:onClick="onclickGoToIlaclar"
-
-            />
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Eczane"
-            />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Notlar"
-            android:id="@+id/BtnNotlar"
-            android:onClick="onclickGoToNotlar"
-            />
-
-        <Button
-            android:id="@+id/BtnIlacEkle"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:onClick="onclickGoToIlacEkle"
-            android:text="İlaç Ekle" />
-
-
-    </LinearLayout>
 
 </LinearLayout>

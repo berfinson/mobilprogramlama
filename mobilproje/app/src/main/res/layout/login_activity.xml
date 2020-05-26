@@ -1,49 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:background="#93DF94"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".girisActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/card">
 
-<ImageView
-    android:layout_marginTop="200dp"
-    android:layout_gravity="center"
-    android:src="@drawable/kisi"
-    android:layout_width="100dp"
-    android:layout_height="100dp" />
-    
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_user" />
+
     <EditText
-        android:layout_marginTop="50dp"
-        android:padding="10dp"
+
         android:id="@+id/EditTextMail"
+        style="@style/edt"
+        android:text="tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mail Adresinizi Giriniz"
-        android:ems="10"
         android:inputType="textEmailAddress" />
+
     <EditText
+        android:id="@+id/EditTextSifre"
+        style="@style/edt"
+        android:hint="Şifre"
+        android:text="123"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/EditTextSifre"
-        android:ems="10"
         android:inputType="textPassword" />
-    <LinearLayout
-        android:layout_marginTop="10dp"
+
+
+    <Button
+        android:id="@+id/BtnGiris"
+        style="@style/btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-
-
-            android:id="@+id/BtnGiris"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onclickGoToMain"
-            android:text="BİTTİ" />
+        android:layout_height="wrap_content"
+        android:onClick="onclickGoToMain"
+        android:text="Giriş Yap" />
     </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
