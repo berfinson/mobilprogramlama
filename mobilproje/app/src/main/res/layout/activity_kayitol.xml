@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#93DF94"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".girisActivity"
+    android:gravity="center"
+    android:layout_gravity="center"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_margin="30dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:gravity="center"
+                android:text="@string/kay_t_ol"
+                android:textSize="30dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/EditTextUsername"
+                android:hint="İsim"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/dark"
+
+                tools:ignore="DuplicateIds" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/EditTextSoyad"
+                android:hint="Soyisim"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/dark"
+
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/EditTextMail"
+                android:hint="Mail"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/dark"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/EditTextSifre"
+                android:hint="Şifre"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/dark"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kayıt Ol"
+                android:id="@+id/BtnKayitOl"
+                android:onClick="onclickGoToAnaMenu"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

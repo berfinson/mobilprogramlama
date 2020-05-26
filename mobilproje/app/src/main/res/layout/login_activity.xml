@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#93DF94"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".girisActivity">
+
+<ImageView
+    android:layout_marginTop="200dp"
+    android:layout_gravity="center"
+    android:src="@drawable/kisi"
+    android:layout_width="100dp"
+    android:layout_height="100dp" />
+    
+    <EditText
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:id="@+id/EditTextMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mail Adresinizi Giriniz"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditTextSifre"
+        android:ems="10"
+        android:inputType="textPassword" />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    <Button
+
+
+        android:text="BİTTİ"
+        android:id="@+id/BtnGiris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="onclickGoToMain"
+        />
+    </LinearLayout>
+</LinearLayout>
