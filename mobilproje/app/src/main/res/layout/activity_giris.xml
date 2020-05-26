@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
   android:gravity="center"
-    tools:context=".girisActivity">
+    tools:context=".girisActivity"
+
+    >
 
 
     <TextView

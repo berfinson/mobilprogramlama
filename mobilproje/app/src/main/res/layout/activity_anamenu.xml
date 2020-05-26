@@ -35,24 +35,20 @@
             />
 
     </LinearLayout>
-
-
-
-
-
     <LinearLayout
       style="@style/card"
 
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#EFF3F0"
             android:text="Şuan Aldığım İlaçlar"
-            android:textSize="24dp"
-            android:background="#69BC7F"
-            />
+            android:textSize="24dp" />
+
         <ListView
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -71,28 +67,27 @@
             android:layout_gravity="center"
             android:gravity="center"
             >
-            <Button
+            <ImageView
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
-                android:text="İlaçlar"
                 android:id="@+id/BtnIlaclar"
                 android:onClick="onclickGoToIlaclar"
+                android:src="@drawable/health"
 
                 />
-            <Button
+            <ImageView
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
-
-                android:text="Eczane"
+                android:src="@drawable/bg_pharmacy"
                 />
 
-            <Button
+            <ImageView
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
-                android:text="Notlar"
+                android:src="@drawable/bg_note"
                 android:id="@+id/BtnNotlar"
                 android:onClick="onclickGoToNotlar"
                 />
