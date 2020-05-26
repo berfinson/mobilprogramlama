@@ -13,7 +13,6 @@ import android.widget.ListView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class anamenuActivity extends AppCompatActivity {
@@ -32,7 +31,7 @@ public class anamenuActivity extends AppCompatActivity {
     }
 
     public void onclickGoToIlaclar(View view) {
-        Intent intent = new Intent(this, ilacmenusuActivity.class);
+        Intent intent = new Intent(this, ilacekleActivity.class);
         startActivity(intent);
     }
 
