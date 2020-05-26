@@ -2,7 +2,6 @@ package com.example.mobilproje;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,7 +49,6 @@ public class ilacekleActivity extends AppCompatActivity {
     }
 
     public void onclickGoToAnaMenu(View view) {
-        Intent intent = new Intent(this, ilacmenusuActivity.class);
-        startActivity(intent);
+        finish();
     }
 }
