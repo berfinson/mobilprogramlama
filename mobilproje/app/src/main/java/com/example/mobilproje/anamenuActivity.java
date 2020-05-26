@@ -30,6 +30,13 @@ public class anamenuActivity extends AppCompatActivity {
         getAllAsync.execute();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        GetAllAsync getAllAsync = new GetAllAsync();
+        getAllAsync.execute();
+    }
+
     public void onclickGoToIlaclar(View view) {
         Intent intent = new Intent(this, ilacekleActivity.class);
         startActivity(intent);
@@ -80,23 +87,5 @@ public class anamenuActivity extends AppCompatActivity {
     }
 
 
-/*
-    AddAllAsync addAllAsync = new AddAllAsync();
-        addAllAsync.execute(medicines);
-    public  class  AddAllAsync extends  AsyncTask<List<medicine>,Void,List<Long>>{
-
-        @Override
-        protected List<Long> doInBackground(List<medicine>... lists) {
-
-            MedDao medDao = MedDatabase.getInstance(context).medDao();
-
-            ArrayList<medicine> newList = new ArrayList<>(lists[0]);
-
-
-          List<Long> res =  medDao.insertAll(newList.toArray(new medicine[0]));
-            return res;
-        }
-    }
-*/
 
 }

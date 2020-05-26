@@ -42,14 +42,14 @@ public class AdaptorMedicine extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflaterv = LayoutInflater.from(context);
         View view = layoutInflaterv.inflate(R.layout.listeitem, null);
-        TextView txt = view.findViewById(R.id.txt);
-        TextView txtDate = view.findViewById(R.id.txt);
+        TextView txt = view.findViewById(R.id.txtName);
+        TextView txtDate = view.findViewById(R.id.txtDate);
         ImageView imageView = view.findViewById(R.id.img);
 
 
-        Glide.with(context).load("http://goo.gl/gEgYUd").into(imageView);
         medicine medicine = datas.get(position);
 
+        Glide.with(context).load(medicine.image).into(imageView);
         txtDate.setText(medicine.date);
         txt.setText(medicine.name);
 

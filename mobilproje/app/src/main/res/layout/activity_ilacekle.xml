@@ -25,23 +25,14 @@
             android:padding="20dp"
 
             />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bitti"
-            android:textSize="30sp"
-            style="@style/edt"
-            android:id="@+id/TextBitti2"
-            android:onClick="onclickGoToAnaMenu"
 
-            />
     </LinearLayout>
     <LinearLayout
         android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        style="@style/edt"
+        style="@style/card"
         android:gravity="center"
         >
 
@@ -56,12 +47,30 @@
             />
 
        <EditText
-           android:layout_width="300dp"
-           android:layout_height="35dp"
-           android:background="#C8C4CD"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+        android:id="@+id/edtName"
            android:gravity="center"
            android:layout_gravity="center"
+           style="@style/edt"
            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="İlaç Resim"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtUrl"
+            android:gravity="center"
+            android:layout_gravity="center"
+            style="@style/edt"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,6 +79,7 @@
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
             android:gravity="center"
+            android:id="@+id/txtDate"
 
 
             />
@@ -77,19 +87,17 @@
             android:id="@+id/button_saat_sec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/edittext_saat"
-            android:layout_toEndOf="@+id/edittext_saat"
-            android:layout_toRightOf="@+id/edittext_saat"
-            android:text="Saat Seç"
+           style="@style/btn"
+            android:text="Ne zaman "
             />
-        <EditText
-            android:id="@+id/edittext_saat"
-            android:layout_width="200dp"
+        <Button
+
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp" />
+            style="@style/btnSec"
+            android:text="Kaydet"
+            android:onClick="clickAddMedicine"
+            />
 
     </LinearLayout>
 

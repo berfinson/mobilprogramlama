@@ -2,28 +2,37 @@ package com.example.mobilproje;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class ilacekleActivity extends AppCompatActivity {
 
     Button btnSaatSec;
-    EditText etSaat;
+    TextView txtDate;
     Context context = this;
+    EditText editName;
+    EditText editUrl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ilacekle);
 
         btnSaatSec = (Button) findViewById(R.id.button_saat_sec);
-        etSaat = (EditText) findViewById(R.id.edittext_saat);
+        editName =  findViewById(R.id.edtName);
+        editUrl =  findViewById(R.id.edtUrl);
+        txtDate =  findViewById(R.id.txtDate);
         btnSaatSec.setOnClickListener(new View.OnClickListener()
 
         {
@@ -37,7 +46,7 @@ public class ilacekleActivity extends AppCompatActivity {
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                                etSaat.setText(hourOfDay + ":" + minute);
+                                txtDate.setText(hourOfDay + ":" + minute);
                             }
                         }, saat, dakika, true);
 
@@ -51,4 +60,42 @@ public class ilacekleActivity extends AppCompatActivity {
     public void onclickGoToAnaMenu(View view) {
         finish();
     }
+
+    public void clickAddMedicine(View view) {
+
+        String name = editName.getText().toString();
+        String url = editUrl.getText().toString();
+        String date = txtDate.getText().toString();
+
+        medicine med = new medicine(name,date,url);
+        AddAllAsync addAllAsync = new AddAllAsync();
+         List<medicine> list = new ArrayList<>();
+         list.add(med);
+        addAllAsync.execute(list);
+
+        Toast.makeText(this,"Yeni ilaç Eklendi",Toast.LENGTH_LONG).show();
+        finish();
+
+
+    }
+
+
+
+
+    public  class  AddAllAsync extends AsyncTask<List<medicine>,Void,List<Long>> {
+
+        @Override
+        protected List<Long> doInBackground(List<medicine>... lists) {
+
+            MedDao medDao = MedDatabase.getInstance(context).medDao();
+
+            ArrayList<medicine> newList = new ArrayList<>(lists[0]);
+
+
+          List<Long> res =  medDao.insertAll(newList.toArray(new medicine[0]));
+            return res;
+        }
+    }
+
+
 }
