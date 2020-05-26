@@ -1,5 +1,6 @@
 package com.example.mobilproje;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,7 +15,8 @@ public class notlarActivity extends AppCompatActivity {
     }
     public void onclickGoToNotEkle(View view)  {
 
-        setContentView(R.layout.activity_notekle);
+        Intent intent = new Intent(this,notekleActivity.class);
+        startActivity(intent);
     }
 
 }

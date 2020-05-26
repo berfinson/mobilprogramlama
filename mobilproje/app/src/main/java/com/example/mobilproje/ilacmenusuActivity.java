@@ -1,5 +1,6 @@
 package com.example.mobilproje;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 
-public class ilaclistesiActivity  extends AppCompatActivity {
+public class ilacmenusuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +59,16 @@ public class ilaclistesiActivity  extends AppCompatActivity {
             Log.e("Delete", medicine.getName());
 
         }
+
+    public void onclickGoToNotlar(View view) {
+        Intent intent = new Intent(this,notlarActivity.class);
+        startActivity(intent);
     }
+
+    public void onclickGoToAnaMenu(View view) {
+        Intent intent = new Intent(this,anamenuActivity.class);
+        startActivity(intent);
+    }
+}
 
 

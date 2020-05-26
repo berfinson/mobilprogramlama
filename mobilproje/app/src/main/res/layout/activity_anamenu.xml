@@ -103,13 +103,13 @@
             android:id="@+id/BtnNotlar"
             android:onClick="onclickGoToNotlar"
             />
+
         <Button
+            android:id="@+id/BtnIlacEkle"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="İlaç Ekle"
-            android:id="@+id/BtnIlacEkle"
             android:onClick="onclickGoToIlacEkle"
-            />
+            android:text="İlaç Ekle" />
 
 
     </LinearLayout>

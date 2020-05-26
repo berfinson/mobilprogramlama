@@ -28,7 +28,7 @@ public class girisActivity<findView> extends AppCompatActivity {
     }
 
     public void onclickGoToIlaclar(View view) {
-        Intent intent = new Intent(this,ilaclistesiActivity.class);
+        Intent intent = new Intent(this, ilacmenusuActivity.class);
         startActivity(intent);
 
     }

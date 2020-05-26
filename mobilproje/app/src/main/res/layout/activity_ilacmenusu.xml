@@ -101,9 +101,9 @@
         <Button
             android:layout_width="115dp"
             android:layout_height="100dp"
-            android:text="İlaçlar"
+            android:text="Anasayfa"
             android:id="@+id/BtnIlac"
-            android:onClick="onclickGoToIlaclar"
+            android:onClick="onclickGoToAnaMenu"
 
             />
         <Button
