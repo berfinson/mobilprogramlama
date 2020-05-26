@@ -1,34 +1,14 @@
 package com.example.mobilproje;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "medicine")
 public class medicine {
-
-    private String name;
-    private String date;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-
-        this.name = name;
-    }
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
+    @PrimaryKey(autoGenerate = true)
+    public  int Id;
+    public String name;
+    public String date;
     public String image;
 
     public medicine(String name, String date, String image) {
@@ -37,6 +17,5 @@ public class medicine {
         this.image = image;
     }
 
-    public medicine() {
-    }
+
 }

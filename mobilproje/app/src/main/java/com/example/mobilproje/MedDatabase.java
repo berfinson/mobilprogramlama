@@ -1,0 +1,28 @@
+package com.example.mobilproje;
+
+import android.content.Context;
+
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+
+@Database(entities = {medicine.class}, version = 1)
+public abstract class MedDatabase extends RoomDatabase {
+
+    private  static  MedDatabase instance;
+
+
+    public static MedDatabase getInstance(Context context)
+    {
+        if(instance==null) {
+            instance = Room.databaseBuilder(context.getApplicationContext(), MedDatabase.class, "MedDB").build();
+        }
+
+        return  instance;
+
+    }
+
+    public  abstract  MedDao medDao();
+
+
+}

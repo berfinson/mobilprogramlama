@@ -20,53 +20,44 @@ public class ilacmenusuActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ilacmenusu);
-        LinearLayout panel = findViewById(R.id.listpanel);
-        for (int i=0;i<50;i++){
-
-        TextView txt = new TextView(this);
-        txt.setText("ilac"+i);
-        panel.addView(txt);}
 
         ListView listView = findViewById(R.id.listView);
         final ArrayList<medicine> medicines = new ArrayList<>();
 
-         medicine med1 = new medicine();
-         med1.setName("Novalgin");
+
+        medicine med2 = new medicine("Parol", "12.30", "");
 
 
-         medicine med2 = new medicine("Parol", "12.30", "");
+        medicines.add(med2);
+        AdaptorMedicine adaptorMedicine = new AdaptorMedicine(medicines, this);
 
-            medicines.add(med1);
-            medicines.add(med2);
-            AdaptorMedicine adaptorMedicine = new AdaptorMedicine(medicines, this);
+        listView.setAdapter(adaptorMedicine);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            listView.setAdapter(adaptorMedicine);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                medicine med = medicines.get(position);
+                Log.e("CLICK", med.name);
 
-                    medicine med = medicines.get(position);
-                    Log.e("CLICK", med.getName());
-
-                }
-            });
+            }
+        });
 
 
-        }
+    }
 
-        public void clickDeleteItem(View view) {
-            medicine medicine = (medicine) view.getTag();
-            Log.e("Delete", medicine.getName());
+    public void clickDeleteItem(View view) {
+        medicine medicine = (medicine) view.getTag();
+        Log.e("Delete", medicine.name);
 
-        }
+    }
 
     public void onclickGoToNotlar(View view) {
-        Intent intent = new Intent(this,notlarActivity.class);
+        Intent intent = new Intent(this, ilacekleActivity.class);
         startActivity(intent);
     }
 
     public void onclickGoToAnaMenu(View view) {
-        Intent intent = new Intent(this,anamenuActivity.class);
+        Intent intent = new Intent(this, anamenuActivity.class);
         startActivity(intent);
     }
 }

@@ -11,12 +11,13 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdaptorMedicine extends BaseAdapter {
-    ArrayList<medicine> datas;
+    List<medicine> datas;
     Context context;
 
-    public AdaptorMedicine(ArrayList<medicine> datas, Context context) {
+    public AdaptorMedicine(List<medicine> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -40,18 +41,17 @@ public class AdaptorMedicine extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflaterv = LayoutInflater.from(context);
-        View view = layoutInflaterv.inflate(R.layout.activity_ilacmenusu, null);
+        View view = layoutInflaterv.inflate(R.layout.listeitem, null);
         TextView txt = view.findViewById(R.id.txt);
-        TextView txtDate = view.findViewById(R.id.txtDate);
+        TextView txtDate = view.findViewById(R.id.txt);
         ImageView imageView = view.findViewById(R.id.img);
 
 
         Glide.with(context).load("http://goo.gl/gEgYUd").into(imageView);
         medicine medicine = datas.get(position);
-        View buton = view.findViewById(R.id.btn);
-        buton.setTag(medicine);
-        txtDate.setText(medicine.getDate());
-        txt.setText(medicine.getName());
+
+        txtDate.setText(medicine.date);
+        txt.setText(medicine.name);
 
 
         return view;
