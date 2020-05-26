@@ -1,82 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".girisActivity"
-    android:gravity="center"
     android:layout_gravity="center"
-    >
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".kayitolActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         >
+
         <LinearLayout
+            style="@style/card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            style="@style/card"
-
             android:layout_margin="30dp"
-            >
+
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:gravity="center"
                 android:text="@string/kay_t_ol"
-                android:textSize="30dp"
-                />
+                android:textSize="30sp" />
+
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-               style="@style/edt"
                 android:id="@+id/EditTextUsername"
-                android:hint="İsim"
-                android:inputType="text"
-                android:textColor="@color/dark"
-
-                tools:ignore="DuplicateIds" />
-            <EditText
+                style="@style/edt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/edt"
-                android:id="@+id/EditTextSoyad"
-                android:hint="Soyisim"
-                android:inputType="text"
-                android:textColor="@color/dark"
+                android:hint="İsim Soyad"
+                android:inputType="text" />
 
-                />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/edt"
                 android:id="@+id/EditTextMail"
-                android:hint="Mail"
-                android:inputType="text"
-                android:textColor="@color/dark"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/EditTextSifre"
-                android:hint="Şifre"
-                android:inputType="textPassword"
                 style="@style/edt"
-                android:textColor="@color/dark"/>
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kayıt Ol"
-                android:id="@+id/BtnKayitOl"
-                android:onClick="onclickGoToAnaMenu"
+                android:hint="Mail"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/EditTextPassword"
+                style="@style/edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Şifre"
+                android:inputType="textPassword" />
+
+            <Button
                 style="@style/btn"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onclickRegister"
+                android:text="Kayıt Ol" />
 
         </LinearLayout>
 
