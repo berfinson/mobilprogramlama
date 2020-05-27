@@ -52,6 +52,10 @@ public class anamenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onclickGoToProfile(View view) {
+        Intent intent = new Intent(this, profileActivity.class);
+        startActivity(intent);
+    }
 
     ///ASyn
 

@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-       style="@style/card"
+        style="@style/card"
         >
         <ImageView
             android:layout_width="90dp"
@@ -35,30 +35,30 @@
             />
 
     </LinearLayout>
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
     <LinearLayout
-      style="@style/card"
-
+        style="@style/card"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
+        android:layout_height="match_parent"
+        >
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#EFF3F0"
-            android:text="Şuan Aldığım İlaçlar"
-            android:textSize="24dp" />
-
-        <ListView
-            android:layout_weight="1"
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:text="İlaçlar Eklenecek"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="30dp"
+            android:text="Ad Soyad:"
+            style="@style/edt"
             />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mail Adresi"
+            style="@style/edt"
+            />
+
+
+
         <LinearLayout
 
             android:layout_width="match_parent"
@@ -68,6 +68,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             >
+
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="60dp"
@@ -77,12 +78,7 @@
                 android:src="@drawable/icon_health"
 
                 />
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:src="@drawable/bg_pharmacy"
-                />
+
 
             <ImageView
                 android:layout_width="0dp"
@@ -97,15 +93,22 @@
                 android:id="@+id/BtnIlacEkle"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
-                android:src="@drawable/icon_user"
+                android:src="@drawable/icon_back"
                 android:layout_weight="1"
-                android:onClick="onclickGoToProfile"
+                android:onClick="onclickGoToIlacEkle"
                 android:text="İlaç Ekle" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_exit"
+                />
 
 
         </LinearLayout>
 
-    </LinearLayout>
 
+    </LinearLayout>
+</ScrollView>
 
 </LinearLayout>
