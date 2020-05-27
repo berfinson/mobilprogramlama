@@ -3,12 +3,15 @@ package com.example.mobilproje;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +31,12 @@ public class anamenuActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         GetAllAsync getAllAsync = new GetAllAsync();
         getAllAsync.execute();
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String username = preferences.getString("username",null);
+        TextView txtusername = findViewById(R.id.txtusername);
+        txtusername.setText(username);
+
     }
 
     @Override

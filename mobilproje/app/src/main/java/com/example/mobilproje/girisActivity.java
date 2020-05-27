@@ -19,13 +19,16 @@ public class girisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_giris);
         //TODO check preferences if there is username and password send user to main screen
-        preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());//preferences objesi
-        editor = preferences.edit();
-        if(preferences.getBoolean("login", false)){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String mail = preferences.getString("mail",null);
+
+
+        if(mail != null){
             Intent i = new Intent(getApplicationContext(),anamenuActivity.class);
             startActivity(i);
             finish();
         }
+
 
 
 
