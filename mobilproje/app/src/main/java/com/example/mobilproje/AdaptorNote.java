@@ -8,15 +8,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
-public class AdaptorMedicine extends BaseAdapter {
-    List<medicine> datas;
+public class AdaptorNote extends BaseAdapter {
+    List<note> datas;
     Context context;
 
-    public AdaptorMedicine(List<medicine> datas, Context context) {
+    public AdaptorNote(List<note> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -40,17 +40,20 @@ public class AdaptorMedicine extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflaterv = LayoutInflater.from(context);
-        View view = layoutInflaterv.inflate(R.layout.listeitem_medicine, null);
+        View view = layoutInflaterv.inflate(R.layout.listeitem_note, null);
         TextView txt = view.findViewById(R.id.txtName);
         TextView txtDate = view.findViewById(R.id.txtDate);
-        ImageView imageView = view.findViewById(R.id.img);
 
 
-        medicine medicine = datas.get(position);
+        note note = datas.get(position);
 
-        Glide.with(context).load(medicine.image).into(imageView);
-        txtDate.setText(medicine.date);
-        txt.setText(medicine.name);
+
+
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
+        Date resultdate = new Date(Long.parseLong(note.date));
+
+        txtDate.setText(sdf.format(resultdate));
+        txt.setText(note.description);
 
 
         return view;

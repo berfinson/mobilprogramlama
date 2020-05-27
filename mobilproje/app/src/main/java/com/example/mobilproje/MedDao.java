@@ -11,9 +11,15 @@ interface MedDao {
 
     @Insert
     List<Long> insertAll(medicine...meds);
+    @Insert
+    List<Long> insertNotes(note...notes);
 
     @Query("SELECT * FROM medicine")
     public List<medicine> getAllMedicines();
+
+
+    @Query("SELECT * FROM note")
+    public List<note> getAllNotes();
 
 
 }
