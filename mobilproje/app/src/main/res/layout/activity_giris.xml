@@ -29,6 +29,7 @@
         android:onClick="onclickGotoLogin"
         android:text="Giriş Yap"
 
+
         />
 
     <Button

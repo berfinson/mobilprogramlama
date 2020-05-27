@@ -79,9 +79,6 @@ public class ilacekleActivity extends AppCompatActivity {
 
     }
 
-
-
-
     public  class  AddAllAsync extends AsyncTask<List<medicine>,Void,List<Long>> {
 
         @Override

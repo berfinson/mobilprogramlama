@@ -14,4 +14,6 @@ interface MedDao {
 
     @Query("SELECT * FROM medicine")
     public List<medicine> getAllMedicines();
+
+
 }

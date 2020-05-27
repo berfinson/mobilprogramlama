@@ -25,14 +25,7 @@
             android:text="Not Ekle"
             android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/TextBitti"
-            style="@style/edt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onclickGoToAnaMenu"
-            android:text="Bitti"
-            android:textSize="30sp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -47,13 +40,12 @@
             android:layout_width="wrap_content"
             android:layout_height="260dp"
             android:layout_weight="1"
+            android:background="#E9E6ED"
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
             android:padding="10dp"
-            android:background="#E9E6ED"
-            android:text="Not alın.."
-            />
+            android:text="Not alın.." />
     </LinearLayout>
 
     <LinearLayout
@@ -62,12 +54,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-        <CalendarView
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tarih"
-            />
 
+        <CalendarView
+            android:id="@+id/tarih"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/btn"
+            android:layout_gravity="center"
+            android:text="Kaydet"
+            android:id="@+id/BtnKaydet"
+            android:onClick="GoToNotlar"
+            />
 
 
     </LinearLayout>
