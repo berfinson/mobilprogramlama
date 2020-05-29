@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class kayitolActivity extends AppCompatActivity {
+    private String emailRegistration;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +30,17 @@ public class kayitolActivity extends AppCompatActivity {
 
         //TODO check for validation
         //Give Error message if not validated
-
-  ///      if (!emailRegistration.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")) {
-  ///          edtMail.setError("Invalid Email Address");
-
-  ///      }
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        if(edtMail.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(),"enter email address",Toast.LENGTH_SHORT).show();
+        }else {
+            if (edtMail.getText().toString().trim().matches(emailPattern)) {
+                Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
 
         PrefHelper.getInstance(this).saveString("username",username);
         PrefHelper.getInstance(this).saveString("password",password);

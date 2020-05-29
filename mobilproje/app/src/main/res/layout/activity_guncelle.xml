@@ -41,13 +41,6 @@
                 android:hint="Yeni Mail"
                 android:inputType="text" />
 
-            <EditText
-                android:id="@+id/newPassword"
-                style="@style/edt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Yeni Şifre"
-                android:inputType="textPassword" />
 
             <Button
                 style="@style/btn"

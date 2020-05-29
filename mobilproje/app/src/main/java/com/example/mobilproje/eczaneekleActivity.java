@@ -1,36 +1,43 @@
 package com.example.mobilproje;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class eczaneekleActivity extends AppCompatActivity {
-    Button kaydet;
+    Button BtnKaydet;
     EditText editKaydet;
     Context context;
-    TextView txtTelefon;
+    EditText editTelefon;
     EditText editName;
     EditText editAdres;
 
-    @SuppressLint("WrongViewCast")
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eczaneekle);
 
-        editKaydet = findViewById(R.id.edtKaydet);
+        BtnKaydet = findViewById(R.id.BtnKaydet);
+        editTelefon = findViewById(R.id.editTextTel);
+        editName = findViewById(R.id.editTextEczane);
+        editAdres = findViewById(R.id.edtAdress);
+
     }
-/*
+
     public void clickAddEczane(View view) {
 
 
         String name = editName.getText().toString();
-        String telefon = txtTelefon.getText().toString();
+        String telefon = editTelefon.getText().toString();
         String adres = editAdres.getText().toString();
 
         eczane eczane = new eczane(name,telefon,adres);
@@ -39,13 +46,12 @@ public class eczaneekleActivity extends AppCompatActivity {
         list.add(eczane);
         addAllAsync.execute(list);
 
-        Toast.makeText(this,"Yeni ilaç Eklendi", Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Yeni Eczane Eklendi", Toast.LENGTH_LONG).show();
         finish();
 
     }
 
- */
-  /*  public  class  AddAllAsync extends AsyncTask<List<eczane>,Void,List<Long>> {
+    public  class  AddAllAsync extends AsyncTask<List<eczane>,Void,List<Long>> {
 
         @Override
         protected List<Long> doInBackground(List<eczane>... lists) {
@@ -58,7 +64,7 @@ public class eczaneekleActivity extends AppCompatActivity {
             List<Long> res =  medDao.insertEczanes(newList.toArray(new eczane[0]));
             return res;
         }
-    } */
+    }
 
 
 }

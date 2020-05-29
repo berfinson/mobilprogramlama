@@ -22,6 +22,9 @@ public class eczanelistActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eczanelist);
+
+
+        listView = findViewById(R.id.listView);
         context = this;
 
 
@@ -47,7 +50,7 @@ public class eczanelistActivity extends AppCompatActivity {
             MedDao medDao = MedDatabase.getInstance(context).medDao();
             List<eczane> meds = medDao.getAllEczanes();
 
-            Log.e("Eczane", String.valueOf(meds.size()));
+            Log.e("MED", String.valueOf(meds.size()));
             return meds;
         }
 

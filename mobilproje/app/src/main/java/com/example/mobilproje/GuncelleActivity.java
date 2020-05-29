@@ -1,10 +1,9 @@
 package com.example.mobilproje;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -18,11 +17,20 @@ public class GuncelleActivity extends AppCompatActivity {
     }
 
     public void onclickGuncelle(View view) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        String username3 = preferences.getString("username",null);
-        TextView newusername = findViewById(R.id.newUsername);
-        newusername.setText(username3);
+
+        TextView txtuser = findViewById(R.id.txtuser);
+        TextView edtuseername = findViewById(R.id.edtuseername);
+
+
+        EditText edtusername = findViewById(R.id.newUsername);
+        EditText edtmail = findViewById(R.id.newMail);
+
+
+        if(txtuser != edtusername){
+
+
+        }
 
 
     }

@@ -45,6 +45,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
 
+
                 />
 
             <EditText
@@ -53,6 +54,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 style="@style/edt"
+                android:id="@+id/editTextEczane"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -69,6 +71,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 style="@style/edt"
+                android:id="@+id/editTextTel"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -85,6 +88,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 style="@style/edt"
+                android:id="@+id/edtAdress"
                 />
             <Button
 
@@ -93,7 +97,7 @@
                 style="@style/btnSec"
                 android:text="Kaydet"
                 android:onClick="clickAddEczane"
-                android:id="@+id/edtKaydet"
+                android:id="@+id/BtnKaydet"
                 />
 
         </LinearLayout>

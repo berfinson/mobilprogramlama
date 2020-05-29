@@ -20,7 +20,7 @@ public class AdaptorEczane extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return datas.size();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class AdaptorEczane extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflaterv = LayoutInflater.from(context);
         View view = layoutInflaterv.inflate(R.layout.listitem_eczane, null);
-        TextView txt = view.findViewById(R.id.txtEczane);
+        TextView txtname = view.findViewById(R.id.txtEczane);
         TextView txtadress = view.findViewById(R.id.txtAdress);
         TextView txttelefon = view.findViewById(R.id.txtTelefon);
 
@@ -45,7 +45,7 @@ public class AdaptorEczane extends BaseAdapter {
         eczane eczane = datas.get(position);
 
         txtadress.setText(eczane.adres);
-        txt.setText(eczane.name);
+        txtname.setText(eczane.name);
         txttelefon.setText(eczane.telefon);
 
 

@@ -18,6 +18,5 @@ public class eczane {
         this.telefon = telefon;
     }
 
-    public eczane(String toString) {
-    }
+
 }

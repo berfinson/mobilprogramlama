@@ -1,6 +1,8 @@
 package com.example.mobilproje;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,12 +34,14 @@ public class profileActivity<context> extends AppCompatActivity {
         edtmailadress.setText(mail);
 
 
-
-
-
-
     }
 
+
+    public void onclickGuncel(View view) {
+
+        Intent intent = new Intent(this,GuncelleActivity.class);
+        startActivity(intent);
+    }
 
 
 
