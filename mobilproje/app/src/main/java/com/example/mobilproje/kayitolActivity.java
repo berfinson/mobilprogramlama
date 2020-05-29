@@ -2,13 +2,9 @@
 package com.example.mobilproje;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,10 +28,14 @@ public class kayitolActivity extends AppCompatActivity {
         //TODO check for validation
         //Give Error message if not validated
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        preferences.edit().putString("username",username).apply();
-        preferences.edit().putString("password",password).apply();
-        preferences.edit().putString("mail",mail).apply();
+  ///      if (!emailRegistration.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")) {
+  ///          edtMail.setError("Invalid Email Address");
+
+  ///      }
+
+        PrefHelper.getInstance(this).saveString("username",username);
+        PrefHelper.getInstance(this).saveString("password",password);
+        PrefHelper.getInstance(this).saveString("mail",mail);
 
             Intent intent = new Intent(this,loginActivity.class);
             startActivity(intent);

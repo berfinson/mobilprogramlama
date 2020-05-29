@@ -18,7 +18,7 @@ public class girisActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_giris);
-        //TODO check preferences if there is username and password send user to main screen
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String mail = preferences.getString("mail",null);
 

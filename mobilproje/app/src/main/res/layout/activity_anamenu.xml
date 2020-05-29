@@ -83,6 +83,7 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:src="@drawable/bg_pharmacy"
+                android:onClick="gotoEczane"
                 />
 
             <ImageView

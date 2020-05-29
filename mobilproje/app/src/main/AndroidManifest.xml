@@ -26,13 +26,14 @@
 
         <activity android:name=".anamenuActivity"/>
 
-
         <activity android:name=".ilacekleActivity"/>
         <activity android:name=".kayitolActivity"/>
         <activity android:name=".notekleActivity"/>
         <activity android:name=".notlarActivity"/>
         <activity android:name=".profileActivity"/>
-
+        <activity android:name=".eczanelistActivity"/>
+        <activity android:name=".eczaneekleActivity"/>
+        <activity android:name=".GuncelleActivity"/>
 
 
     </application>

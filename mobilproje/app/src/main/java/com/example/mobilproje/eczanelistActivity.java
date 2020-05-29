@@ -1,3 +1,5 @@
+
+
 package com.example.mobilproje;
 
 import android.content.Context;
@@ -13,51 +15,49 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-public class notlarActivity extends AppCompatActivity {
+public class eczanelistActivity extends AppCompatActivity {
     ListView listView;
     Context context;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notlar);
+        setContentView(R.layout.activity_eczanelist);
+        context = this;
 
-         listView = findViewById(R.id.listView);
-         context = this;
 
     }
-    public void onclickGoToNotEkle(View view)  {
 
-        Intent intent = new Intent(this,notekleActivity.class);
+    public void onclickEczaneEkle(View view) {
+        Intent intent = new Intent(this, eczaneekleActivity.class);
         startActivity(intent);
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
-      GetAllAsync getAllAsync = new GetAllAsync();
+        GetAllAsync getAllAsync = new GetAllAsync();
         getAllAsync.execute();
     }
-
-
-    public class GetAllAsync extends AsyncTask<Void, Void, List<note>> {
+    public class GetAllAsync extends AsyncTask<Void, Void, List<eczane>> {
 
         @Override
-        protected List<note> doInBackground(Void... voids) {
+        protected List<eczane> doInBackground(Void... voids) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
-            List<note> meds = medDao.getAllNotes();
+            List<eczane> meds = medDao.getAllEczanes();
 
-            Log.e("MED", String.valueOf(meds.size()));
+            Log.e("Eczane", String.valueOf(meds.size()));
             return meds;
         }
 
         @Override
-        protected void onPostExecute(final List<note> notes) {
-            super.onPostExecute(notes);
+        protected void onPostExecute(final List<eczane> eczanes) {
+            super.onPostExecute(eczanes);
 
-            AdaptorNote adaptorMedicine = new AdaptorNote(notes, context);
+            AdaptorEczane adaptorEczane = new AdaptorEczane(eczanes, context);
 
-            listView.setAdapter(adaptorMedicine);
+            listView.setAdapter(adaptorEczane);
 
         }
     }

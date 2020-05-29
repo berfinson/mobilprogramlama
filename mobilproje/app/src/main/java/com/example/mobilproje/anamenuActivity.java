@@ -66,6 +66,12 @@ public class anamenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoEczane(View view) {
+        Intent intent = new Intent(this, eczanelistActivity.class);
+        startActivity(intent);
+    }
+
+
     ///ASyn
 
     public class GetAllAsync extends AsyncTask<Void, Void, List<medicine>> {
