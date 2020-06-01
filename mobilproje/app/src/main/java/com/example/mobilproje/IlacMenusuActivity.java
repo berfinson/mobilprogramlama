@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,17 +13,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 
-public class ilacmenusuActivity extends AppCompatActivity {
+public class IlacMenusuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ilacmenusu);
 
         ListView listView = findViewById(R.id.listView);
-        final ArrayList<medicine> medicines = new ArrayList<>();
+        final ArrayList<Medicine> medicines = new ArrayList<>();
 
 
-        medicine med2 = new medicine("Parol", "12.30", "");
+        Medicine med2 = new Medicine("Parol", "12.30", "");
 
 
         medicines.add(med2);
@@ -36,7 +34,7 @@ public class ilacmenusuActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                medicine med = medicines.get(position);
+                Medicine med = medicines.get(position);
                 Log.e("CLICK", med.name);
 
             }
@@ -46,18 +44,18 @@ public class ilacmenusuActivity extends AppCompatActivity {
     }
 
     public void clickDeleteItem(View view) {
-        medicine medicine = (medicine) view.getTag();
+        Medicine medicine = (Medicine) view.getTag();
         Log.e("Delete", medicine.name);
 
     }
 
     public void onclickGoToNotlar(View view) {
-        Intent intent = new Intent(this, ilacekleActivity.class);
+        Intent intent = new Intent(this, IlacEkleActivity.class);
         startActivity(intent);
     }
 
     public void onclickGoToAnaMenu(View view) {
-        Intent intent = new Intent(this, anamenuActivity.class);
+        Intent intent = new Intent(this, AnaMenuActivity.class);
         startActivity(intent);
     }
 }

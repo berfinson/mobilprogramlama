@@ -25,7 +25,7 @@
                 android:textSize="30sp" />
 
             <EditText
-                android:id="@+id/newUsername"
+                android:id="@+id/edtUserName"
                 style="@style/edt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
 
 
             <EditText
-                android:id="@+id/newMail"
+                android:id="@+id/edtMail"
                 style="@style/edt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

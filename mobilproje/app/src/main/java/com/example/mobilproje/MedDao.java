@@ -10,21 +10,21 @@ import java.util.List;
 interface MedDao {
 
     @Insert
-    List<Long> insertAll(medicine...meds);
+    List<Long> insertAll(Medicine...meds);
     @Insert
-    List<Long> insertNotes(note...notes);
+    List<Long> insertNotes(NotActivity...notes);
     @Insert
-    List<Long> insertEczanes(eczane...eczanes);
+    List<Long> insertEczanes(EczaneActivity...eczanes);
 
-    @Query("SELECT * FROM medicine")
-    public List<medicine> getAllMedicines();
+    @Query("SELECT * FROM Medicine")
+    public List<Medicine> getAllMedicines();
 
 
-    @Query("SELECT * FROM note")
-    public List<note> getAllNotes();
+    @Query("SELECT * FROM NotActivity")
+    public List<NotActivity> getAllNotes();
 
-    @Query("SELECT * FROM eczane")
-   public List<eczane> getAllEczanes();
+    @Query("SELECT * FROM EczaneActivity")
+   public List<EczaneActivity> getAllEczanes();
 
 
 }

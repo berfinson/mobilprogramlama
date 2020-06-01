@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class profileActivity<context> extends AppCompatActivity {
+public class ProfileActivity<context> extends AppCompatActivity {
 
     Context context;
     ListView listView;
@@ -18,9 +18,6 @@ public class profileActivity<context> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         context = this;
         setContentView(R.layout.activity_profile); //Profil sayfası
-
-
-
 
 
     }

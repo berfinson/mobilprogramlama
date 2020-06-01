@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class loginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class loginActivity extends AppCompatActivity {
         String mailS =  PrefHelper.getInstance(this).getString("mail");
         String passwordS =  PrefHelper.getInstance(this).getString("password");
         if (mail.equalsIgnoreCase(mailS)&& sifre.equalsIgnoreCase(passwordS)) {
-            Intent intent = new Intent(this,anamenuActivity.class);
+            Intent intent = new Intent(this, AnaMenuActivity.class);
             startActivity(intent);
         }
         else{

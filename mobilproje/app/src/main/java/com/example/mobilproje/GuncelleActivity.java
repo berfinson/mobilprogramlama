@@ -4,54 +4,55 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GuncelleActivity extends AppCompatActivity {
     PrefHelper prefHelper;
+
+    EditText edtUserName;
+    EditText edtMail;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guncelle);
 
 
+        prefHelper = PrefHelper.getInstance(this);
+
+        edtUserName = findViewById(R.id.edtUserName);
+        edtMail = findViewById(R.id.edtMail);
+
         String username2 = prefHelper.getString("username");
         String mail = prefHelper.getString("mail");
-        EditText newUsername = findViewById(R.id.newUsername);
-        newUsername.setText(username2);
 
-
-        EditText edtmail = findViewById(R.id.newMail);
-        edtmail.setText(mail);
+        edtUserName.setText(username2);
+        edtMail.setText(mail);
 
     }
 
 
-
-
     public void onclickGuncelle(View view) {
-        EditText newUsername = findViewById(R.id.newUsername);
-        EditText edtmail = findViewById(R.id.newMail);
 
 
-        String name = newUsername.getText().toString();
-        String mail = edtmail.getText().toString();
+        String name = edtUserName.getText().toString();
+        String mail = edtMail.getText().toString();
 
-        prefHelper.saveString("mail",mail);
-        prefHelper.saveString("username",name);
 
-        Toast.makeText(this,"Verileriniz Güncellendi",Toast.LENGTH_LONG).show();
+        prefHelper.saveString("mail", mail);
+        prefHelper.saveString("username", name);
+
+
+        prefHelper.showMessage("Güncelleme tamamlandı");
         finish();
-
 
 
     }
 
     public void onclickIptal(View view) {
-        Intent intent = new Intent(this,profileActivity.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
 
     }

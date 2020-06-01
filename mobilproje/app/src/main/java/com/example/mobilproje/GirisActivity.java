@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class girisActivity extends AppCompatActivity {
+public class GirisActivity extends AppCompatActivity {
     SharedPreferences preferences;//preferences referansı
     SharedPreferences.Editor editor;
 
@@ -22,7 +22,7 @@ public class girisActivity extends AppCompatActivity {
 
 
         if(mail != null){
-            Intent i = new Intent(getApplicationContext(),anamenuActivity.class);
+            Intent i = new Intent(getApplicationContext(), AnaMenuActivity.class);
             startActivity(i);
             finish();
         }
@@ -32,12 +32,12 @@ public class girisActivity extends AppCompatActivity {
 
     }
     public void onclickGoToUyeOl(View view) {
-        Intent intent = new Intent(this,kayitolActivity.class);
+        Intent intent = new Intent(this, KayitOlActivity.class);
         startActivity(intent);
     }
 
     public void onclickGotoLogin(View view) {
-        Intent intent = new Intent(this,loginActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }

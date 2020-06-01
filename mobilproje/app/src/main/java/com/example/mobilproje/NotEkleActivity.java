@@ -1,7 +1,6 @@
 package com.example.mobilproje;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class notekleActivity extends AppCompatActivity {
+public class NotEkleActivity extends AppCompatActivity {
     Button kaydet;
     EditText editNote;
     Context context;
@@ -32,10 +31,10 @@ public class notekleActivity extends AppCompatActivity {
 
     public void GoToNotlar(View view) {
 
-        note note = new note(editNote.getText().toString());
+        NotActivity note = new NotActivity(editNote.getText().toString());
 
         AddAllAsync addAllAsync = new AddAllAsync();
-        List<note> list = new ArrayList<>();
+        List<NotActivity> list = new ArrayList<>();
         list.add(note);
         addAllAsync.execute(list);
 
@@ -46,17 +45,17 @@ public class notekleActivity extends AppCompatActivity {
     }
 
 
-    private class AddAllAsync extends AsyncTask<List<note>, Void, List<Long>> {
+    private class AddAllAsync extends AsyncTask<List<NotActivity>, Void, List<Long>> {
 
         @Override
-        protected List<Long> doInBackground(List<note>... lists) {
+        protected List<Long> doInBackground(List<NotActivity>... lists) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
 
-            ArrayList<note> newList = new ArrayList<>(lists[0]);
+            ArrayList<NotActivity> newList = new ArrayList<>(lists[0]);
 
 
-            List<Long> res = medDao.insertNotes(newList.toArray(new note[0]));
+            List<Long> res = medDao.insertNotes(newList.toArray(new NotActivity[0]));
             return res;
         }
     }

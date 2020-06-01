@@ -14,23 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".girisActivity">
+        <activity android:name=".GirisActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ilacmenusuActivity" />
-        <activity android:name=".loginActivity" />
-        <activity android:name=".anamenuActivity" />
-        <activity android:name=".ilacekleActivity" />
-        <activity android:name=".kayitolActivity" />
-        <activity android:name=".notekleActivity" />
-        <activity android:name=".notlarActivity" />
-        <activity android:name=".profileActivity" />
-        <activity android:name=".eczanelistActivity" />
-        <activity android:name=".eczaneekleActivity" />
+        <activity android:name=".IlacMenusuActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".AnaMenuActivity" />
+        <activity android:name=".IlacEkleActivity" />
+        <activity android:name=".KayitOlActivity" />
+        <activity android:name=".NotEkleActivity" />
+        <activity android:name=".NotlarActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".EczaneListActivity" />
+        <activity android:name=".EczaneEkleActivity" />
         <activity android:name=".GuncelleActivity" />
 
 

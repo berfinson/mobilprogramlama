@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class ilacekleActivity extends AppCompatActivity {
+public class IlacEkleActivity extends AppCompatActivity {
 
     Button btnSaatSec;
     TextView txtDate;
@@ -67,9 +67,9 @@ public class ilacekleActivity extends AppCompatActivity {
         String url = editUrl.getText().toString();
         String date = txtDate.getText().toString();
 
-        medicine med = new medicine(name,date,url);
+        Medicine med = new Medicine(name,date,url);
         AddAllAsync addAllAsync = new AddAllAsync();
-         List<medicine> list = new ArrayList<>();
+         List<Medicine> list = new ArrayList<>();
          list.add(med);
         addAllAsync.execute(list);
 
@@ -79,17 +79,17 @@ public class ilacekleActivity extends AppCompatActivity {
 
     }
 
-    public  class  AddAllAsync extends AsyncTask<List<medicine>,Void,List<Long>> {
+    public  class  AddAllAsync extends AsyncTask<List<Medicine>,Void,List<Long>> {
 
         @Override
-        protected List<Long> doInBackground(List<medicine>... lists) {
+        protected List<Long> doInBackground(List<Medicine>... lists) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
 
-            ArrayList<medicine> newList = new ArrayList<>(lists[0]);
+            ArrayList<Medicine> newList = new ArrayList<>(lists[0]);
 
 
-          List<Long> res =  medDao.insertAll(newList.toArray(new medicine[0]));
+          List<Long> res =  medDao.insertAll(newList.toArray(new Medicine[0]));
             return res;
         }
     }

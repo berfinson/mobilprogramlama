@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".kayitolActivity">
+    tools:context=".KayitOlActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -5,18 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class kayitolActivity extends AppCompatActivity {
-    private String emailRegistration;
+public class KayitOlActivity extends AppCompatActivity {
+
     EditText edtUserName;
     EditText edtMail;
     EditText edtPassword;
 
     PrefHelper prefHelper;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,15 +41,15 @@ public class kayitolActivity extends AppCompatActivity {
         //Give Error message if not validated
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         if (mail.isEmpty()) {
-            showMessage("Mail giriniz");
+            prefHelper.showMessage("Mail giriniz");
             return;
         }
         if (!mail.matches(emailPattern)) {
-            showMessage("Geçersiz mail adresi");
+            prefHelper.showMessage("Geçersiz mail adresi");
             return;
         }
         if (username.isEmpty()) {
-            showMessage("kullanıcı adı giriniz");
+            prefHelper.showMessage("kullanıcı adı giriniz");
             return;
         }
 
@@ -58,14 +58,10 @@ public class kayitolActivity extends AppCompatActivity {
         prefHelper.saveString("mail", mail);
 
 
-        Intent intent = new Intent(this, loginActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
 
     }
 
-    public void showMessage(String message) {
 
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-
-    }
 }

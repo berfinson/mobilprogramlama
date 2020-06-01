@@ -13,10 +13,10 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class AdaptorMedicine extends BaseAdapter {
-    List<medicine> datas;
+    List<Medicine> datas;
     Context context;
 
-    public AdaptorMedicine(List<medicine> datas, Context context) {
+    public AdaptorMedicine(List<Medicine> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -46,7 +46,7 @@ public class AdaptorMedicine extends BaseAdapter {
         ImageView imageView = view.findViewById(R.id.img);
 
 
-        medicine medicine = datas.get(position);
+        Medicine medicine = datas.get(position);
 
         Glide.with(context).load(medicine.image).into(imageView);
         txtDate.setText(medicine.date);

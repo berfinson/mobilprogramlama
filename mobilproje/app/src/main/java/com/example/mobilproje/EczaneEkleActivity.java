@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class eczaneekleActivity extends AppCompatActivity {
+public class EczaneEkleActivity extends AppCompatActivity {
     Button BtnKaydet;
     EditText editKaydet;
     Context context;
@@ -40,9 +40,9 @@ public class eczaneekleActivity extends AppCompatActivity {
         String telefon = editTelefon.getText().toString();
         String adres = editAdres.getText().toString();
 
-        eczane eczane = new eczane(name,telefon,adres);
+        EczaneActivity eczane = new EczaneActivity(name,telefon,adres);
         AddAllAsync addAllAsync = new AddAllAsync();
-        List<eczane> list = new ArrayList<>();
+        List<EczaneActivity> list = new ArrayList<>();
         list.add(eczane);
         addAllAsync.execute(list);
 
@@ -51,17 +51,17 @@ public class eczaneekleActivity extends AppCompatActivity {
 
     }
 
-    public  class  AddAllAsync extends AsyncTask<List<eczane>,Void,List<Long>> {
+    public  class  AddAllAsync extends AsyncTask<List<EczaneActivity>,Void,List<Long>> {
 
         @Override
-        protected List<Long> doInBackground(List<eczane>... lists) {
+        protected List<Long> doInBackground(List<EczaneActivity>... lists) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
 
-            ArrayList<eczane> newList = new ArrayList<>(lists[0]);
+            ArrayList<EczaneActivity> newList = new ArrayList<>(lists[0]);
 
 
-            List<Long> res =  medDao.insertEczanes(newList.toArray(new eczane[0]));
+            List<Long> res =  medDao.insertEczanes(newList.toArray(new EczaneActivity[0]));
             return res;
         }
     }

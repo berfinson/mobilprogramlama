@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-public class anamenuActivity extends AppCompatActivity {
+public class AnaMenuActivity extends AppCompatActivity {
 
     Context context;
     ListView listView;
@@ -47,47 +47,47 @@ public class anamenuActivity extends AppCompatActivity {
     }
 
     public void onclickGoToIlaclar(View view) {
-        Intent intent = new Intent(this, ilacekleActivity.class);
+        Intent intent = new Intent(this, IlacEkleActivity.class);
         startActivity(intent);
     }
 
     public void onclickGoToNotlar(View view) {
-        Intent intent = new Intent(this, notlarActivity.class);
+        Intent intent = new Intent(this, NotlarActivity.class);
         startActivity(intent);
     }
 
     public void onclickGoToIlacEkle(View view) {
-        Intent intent = new Intent(this, ilacekleActivity.class);
+        Intent intent = new Intent(this, IlacEkleActivity.class);
         startActivity(intent);
     }
 
     public void onclickGoToProfile(View view) {
-        Intent intent = new Intent(this, profileActivity.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 
     public void gotoEczane(View view) {
-        Intent intent = new Intent(this, eczanelistActivity.class);
+        Intent intent = new Intent(this, EczaneListActivity.class);
         startActivity(intent);
     }
 
 
     ///ASyn
 
-    public class GetAllAsync extends AsyncTask<Void, Void, List<medicine>> {
+    public class GetAllAsync extends AsyncTask<Void, Void, List<Medicine>> {
 
         @Override
-        protected List<medicine> doInBackground(Void... voids) {
+        protected List<Medicine> doInBackground(Void... voids) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
-            List<medicine> meds = medDao.getAllMedicines();
+            List<Medicine> meds = medDao.getAllMedicines();
 
             Log.e("MED", String.valueOf(meds.size()));
             return meds;
         }
 
         @Override
-        protected void onPostExecute(final List<medicine> medicines) {
+        protected void onPostExecute(final List<Medicine> medicines) {
             super.onPostExecute(medicines);
 
             AdaptorMedicine adaptorMedicine = new AdaptorMedicine(medicines, context);
@@ -97,7 +97,7 @@ public class anamenuActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    medicine med = medicines.get(position);
+                    Medicine med = medicines.get(position);
                     Log.e("CLICK", med.name);
 
                 }

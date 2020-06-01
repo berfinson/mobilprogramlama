@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -13,10 +12,10 @@ import java.util.Date;
 import java.util.List;
 
 public class AdaptorNote extends BaseAdapter {
-    List<note> datas;
+    List<NotActivity> datas;
     Context context;
 
-    public AdaptorNote(List<note> datas, Context context) {
+    public AdaptorNote(List<NotActivity> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -45,7 +44,7 @@ public class AdaptorNote extends BaseAdapter {
         TextView txtDate = view.findViewById(R.id.txtDate);
 
 
-        note note = datas.get(position);
+        NotActivity note = datas.get(position);
 
 
 
