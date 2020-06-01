@@ -1,4 +1,5 @@
 package com.example.mobilproje;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class ProfileActivity<context> extends AppCompatActivity {
 
     Context context;
     ListView listView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public class ProfileActivity<context> extends AppCompatActivity {
 
     public void onclickGuncel(View view) {
 
-        Intent intent = new Intent(this,GuncelleActivity.class);
+        Intent intent = new Intent(this, GuncelleActivity.class);
         startActivity(intent);
     }
 
@@ -43,8 +45,5 @@ public class ProfileActivity<context> extends AppCompatActivity {
         String mail = PrefHelper.getInstance(this).getString("mail");
         TextView edtmailadress = findViewById(R.id.edtmailadress);
         edtmailadress.setText(mail);
-
-
-
     }
 }
