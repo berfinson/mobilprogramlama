@@ -53,14 +53,15 @@
 
             <TextView
                 android:id="@+id/edtuseername"
-                style="@style/edt"
+
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+
                 android:id="@+id/edtmailadress"
-                style="@style/edt"
+
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -69,7 +70,7 @@
                 style="@style/btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Güncelle"
+                android:text="Düzenle"
                 android:id="@+id/btnGuncelle"
                 android:onClick="onclickGuncel"
 

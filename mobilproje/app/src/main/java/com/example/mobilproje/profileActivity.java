@@ -21,6 +21,20 @@ public class profileActivity<context> extends AppCompatActivity {
 
 
 
+
+
+    }
+
+
+    public void onclickGuncel(View view) {
+
+        Intent intent = new Intent(this,GuncelleActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         String username = PrefHelper.getInstance(this).getString("username");
         TextView txtuser = findViewById(R.id.txtuser);
         txtuser.setText(username);
@@ -34,15 +48,6 @@ public class profileActivity<context> extends AppCompatActivity {
         edtmailadress.setText(mail);
 
 
+
     }
-
-
-    public void onclickGuncel(View view) {
-
-        Intent intent = new Intent(this,GuncelleActivity.class);
-        startActivity(intent);
-    }
-
-
-
 }

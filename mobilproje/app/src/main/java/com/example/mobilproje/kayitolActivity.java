@@ -12,42 +12,60 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class kayitolActivity extends AppCompatActivity {
     private String emailRegistration;
+    EditText edtUserName;
+    EditText edtMail;
+    EditText edtPassword;
+
+    PrefHelper prefHelper;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kayitol);
+
+        edtUserName = findViewById(R.id.EditTextUsername);
+        edtMail = findViewById(R.id.EditTextMail);
+        edtPassword = findViewById(R.id.EditTextPassword);
+
+        prefHelper = PrefHelper.getInstance(this);
     }
 
     public void onclickRegister(View view) {
-        EditText edtUserName = findViewById(R.id.EditTextUsername);
-        EditText edtMail = findViewById(R.id.EditTextMail);
-        EditText edtPassword = findViewById(R.id.EditTextPassword);
+
 
         String username = edtUserName.getText().toString();
-        String mail = edtMail.getText().toString();
+        String mail = edtMail.getText().toString().trim();
         String password = edtPassword.getText().toString();
 
         //TODO check for validation
         //Give Error message if not validated
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-        if(edtMail.getText().toString().isEmpty()) {
-            Toast.makeText(getApplicationContext(),"enter email address",Toast.LENGTH_SHORT).show();
-        }else {
-            if (edtMail.getText().toString().trim().matches(emailPattern)) {
-                Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
-                return;
-            }
+        if (mail.isEmpty()) {
+            showMessage("Mail giriniz");
+            return;
+        }
+        if (!mail.matches(emailPattern)) {
+            showMessage("Geçersiz mail adresi");
+            return;
+        }
+        if (username.isEmpty()) {
+            showMessage("kullanıcı adı giriniz");
+            return;
         }
 
-        PrefHelper.getInstance(this).saveString("username",username);
-        PrefHelper.getInstance(this).saveString("password",password);
-        PrefHelper.getInstance(this).saveString("mail",mail);
+        prefHelper.saveString("username", username);
+        prefHelper.saveString("password", password);
+        prefHelper.saveString("mail", mail);
 
-            Intent intent = new Intent(this,loginActivity.class);
-            startActivity(intent);
+
+        Intent intent = new Intent(this, loginActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void showMessage(String message) {
+
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 
     }
 }

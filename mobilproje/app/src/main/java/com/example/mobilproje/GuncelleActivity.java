@@ -5,36 +5,47 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GuncelleActivity extends AppCompatActivity {
+    PrefHelper prefHelper;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guncelle);
+
+
+        String username2 = prefHelper.getString("username");
+        String mail = prefHelper.getString("mail");
+        EditText newUsername = findViewById(R.id.newUsername);
+        newUsername.setText(username2);
+
+
+        EditText edtmail = findViewById(R.id.newMail);
+        edtmail.setText(mail);
+
     }
 
+
+
+
     public void onclickGuncelle(View view) {
-
-        String username2 = PrefHelper.getInstance(this).getString("username");
-        TextView edtuseername = findViewById(R.id.edtuseername);
-        edtuseername.setText(username2);
-
-
-        EditText edtusername = findViewById(R.id.newUsername);
+        EditText newUsername = findViewById(R.id.newUsername);
         EditText edtmail = findViewById(R.id.newMail);
 
-        String name = edtusername.getText().toString();
+
+        String name = newUsername.getText().toString();
         String mail = edtmail.getText().toString();
 
-        if(name.equalsIgnoreCase(username2)){
+        prefHelper.saveString("mail",mail);
+        prefHelper.saveString("username",name);
 
-        }
-        else{
-            edtuseername.setText(name);
-        }
+        Toast.makeText(this,"Verileriniz Güncellendi",Toast.LENGTH_LONG).show();
+        finish();
+
 
 
     }
