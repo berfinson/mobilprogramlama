@@ -18,18 +18,22 @@ public class GuncelleActivity extends AppCompatActivity {
 
     public void onclickGuncelle(View view) {
 
-
-        TextView txtuser = findViewById(R.id.txtuser);
+        String username2 = PrefHelper.getInstance(this).getString("username");
         TextView edtuseername = findViewById(R.id.edtuseername);
+        edtuseername.setText(username2);
 
 
         EditText edtusername = findViewById(R.id.newUsername);
         EditText edtmail = findViewById(R.id.newMail);
 
+        String name = edtusername.getText().toString();
+        String mail = edtmail.getText().toString();
 
-        if(txtuser != edtusername){
+        if(name.equalsIgnoreCase(username2)){
 
-
+        }
+        else{
+            edtuseername.setText(name);
         }
 
 
