@@ -19,11 +19,10 @@ public class ProfileActivity<context> extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
-        setContentView(R.layout.activity_profile); //Profil sayfası
+        setContentView(R.layout.activity_profile);
 
 
     }
-
 
     public void onclickGuncel(View view) {
 
