@@ -57,22 +57,20 @@
            android:layout_gravity="center"
            style="@style/edt"
            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="İlaç Resim"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            android:gravity="center"
+<ImageView
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:id="@+id/imgview">
 
-            />
-        <EditText
+</ImageView>
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/edtUrl"
+            android:onClick="selectimage"
             android:gravity="center"
+            android:text="Resim Seç"
             android:layout_gravity="center"
-            style="@style/edt"
+            style="@style/btn"
             />
         <TextView
             android:layout_width="match_parent"

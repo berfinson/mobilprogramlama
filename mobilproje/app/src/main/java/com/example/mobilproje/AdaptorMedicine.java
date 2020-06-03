@@ -1,6 +1,7 @@
 package com.example.mobilproje;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,9 +51,10 @@ public class AdaptorMedicine extends BaseAdapter {
 
         Medicine medicine = datas.get(position);
 
-        Glide.with(context).load(medicine.image).into(imageView);
+        Glide.with(context).load(medicine.image).centerInside().into(imageView);
         txtDate.setText(medicine.date);
         txt.setText(medicine.name);
+
 
 
         return view;

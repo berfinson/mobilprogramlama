@@ -2,16 +2,21 @@ package com.example.mobilproje;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,24 +28,27 @@ public class IlacEkleActivity extends AppCompatActivity {
     TextView txtDate;
     Context context = this;
     EditText editName;
-    EditText editUrl;
+    ImageView imageView;
+
+    String url = "https://i.ytimg.com/vi/K_M655e4gIo/maxresdefault.jpg";
 
     PrefHelper prefHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ilacekle);
 
+
         prefHelper = PrefHelper.getInstance(this);
 
         btnSaatSec = (Button) findViewById(R.id.button_saat_sec);
-        editName =  findViewById(R.id.edtName);
-        editUrl =  findViewById(R.id.edtUrl);
-        txtDate =  findViewById(R.id.txtDate);
-        btnSaatSec.setOnClickListener(new View.OnClickListener()
+        editName = findViewById(R.id.edtName);
+        imageView = findViewById(R.id.imgview);
 
-        {
-            public void onClick (View v){
+        txtDate = findViewById(R.id.txtDate);
+        btnSaatSec.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 final Calendar takvim = Calendar.getInstance();
                 int saat = takvim.get(Calendar.HOUR_OF_DAY);
                 int dakika = takvim.get(Calendar.MINUTE);
@@ -68,13 +76,13 @@ public class IlacEkleActivity extends AppCompatActivity {
     public void clickAddMedicine(View view) {
 
         String name = editName.getText().toString();
-        String url = editUrl.getText().toString();
+
         String date = txtDate.getText().toString();
 
-        Medicine med = new Medicine(name,date,url);
+        Medicine med = new Medicine(name, date, url);
         AddAllAsync addAllAsync = new AddAllAsync();
-         List<Medicine> list = new ArrayList<>();
-         list.add(med);
+        List<Medicine> list = new ArrayList<>();
+        list.add(med);
         addAllAsync.execute(list);
 
         prefHelper.showMessage("ilaç eklendi");
@@ -83,7 +91,28 @@ public class IlacEkleActivity extends AppCompatActivity {
 
     }
 
-    public  class  AddAllAsync extends AsyncTask<List<Medicine>,Void,List<Long>> {
+    public void selectimage(View view) {
+
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+
+    }
+
+    public static final int PICK_IMAGE = 1;
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE) {
+            url = data.getData().toString();
+            Log.e("Med", url);
+            Glide.with(context).load(url).into(imageView);
+        }
+    }
+
+    public class AddAllAsync extends AsyncTask<List<Medicine>, Void, List<Long>> {
 
         @Override
         protected List<Long> doInBackground(List<Medicine>... lists) {
@@ -93,7 +122,7 @@ public class IlacEkleActivity extends AppCompatActivity {
             ArrayList<Medicine> newList = new ArrayList<>(lists[0]);
 
 
-          List<Long> res =  medDao.insertAll(newList.toArray(new Medicine[0]));
+            List<Long> res = medDao.insertAll(newList.toArray(new Medicine[0]));
             return res;
         }
     }
