@@ -21,7 +21,7 @@ interface MedDao {
 
 
     @Query("SELECT * FROM NotActivity")
-    public List<NotActivity> getAllNotes();
+    public List<NotActivity>getAllNotes();
 
     @Query("SELECT * FROM EczaneActivity")
    public List<EczaneActivity> getAllEczanes();

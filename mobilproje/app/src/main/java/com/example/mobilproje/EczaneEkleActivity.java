@@ -22,9 +22,13 @@ public class EczaneEkleActivity extends AppCompatActivity {
     EditText editName;
     EditText editAdres;
 
+    PrefHelper prefHelper;
+
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eczaneekle);
+
+        prefHelper = PrefHelper.getInstance(this);
 
         BtnKaydet = findViewById(R.id.BtnKaydet);
         editTelefon = findViewById(R.id.editTextTel);
@@ -46,7 +50,7 @@ public class EczaneEkleActivity extends AppCompatActivity {
         list.add(eczane);
         addAllAsync.execute(list);
 
-        Toast.makeText(this,"Yeni Eczane Eklendi", Toast.LENGTH_LONG).show();
+        prefHelper.showMessage("yeni eczane eklendi");
         finish();
 
     }
