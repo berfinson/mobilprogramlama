@@ -39,20 +39,20 @@ public class NotlarActivity extends AppCompatActivity {
     }
 
 
-    public class GetAllAsync extends AsyncTask<Void, Void, List<NotActivity>> {
+    public class GetAllAsync extends AsyncTask<Void, Void, List<Note>> {
 
         @Override
-        protected List<NotActivity> doInBackground(Void... voids) {
+        protected List<Note> doInBackground(Void... voids) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
-            List<NotActivity> meds = medDao.getAllNotes();
+            List<Note> meds = medDao.getAllNotes();
 
             Log.e("MED", String.valueOf(meds.size()));
             return meds;
         }
 
         @Override
-        protected void onPostExecute(final List<NotActivity> notes) {
+        protected void onPostExecute(final List<Note> notes) {
             super.onPostExecute(notes);
 
             AdaptorNote adaptorMedicine = new AdaptorNote(notes, context);

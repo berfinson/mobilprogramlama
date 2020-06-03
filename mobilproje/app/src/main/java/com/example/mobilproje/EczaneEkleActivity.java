@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,9 +43,9 @@ public class EczaneEkleActivity extends AppCompatActivity {
         String telefon = editTelefon.getText().toString();
         String adres = editAdres.getText().toString();
 
-        EczaneActivity eczane = new EczaneActivity(name,telefon,adres);
+        Eczane eczane = new Eczane(name,telefon,adres);
         AddAllAsync addAllAsync = new AddAllAsync();
-        List<EczaneActivity> list = new ArrayList<>();
+        List<Eczane> list = new ArrayList<>();
         list.add(eczane);
         addAllAsync.execute(list);
 
@@ -55,17 +54,17 @@ public class EczaneEkleActivity extends AppCompatActivity {
 
     }
 
-    public  class  AddAllAsync extends AsyncTask<List<EczaneActivity>,Void,List<Long>> {
+    public  class  AddAllAsync extends AsyncTask<List<Eczane>,Void,List<Long>> {
 
         @Override
-        protected List<Long> doInBackground(List<EczaneActivity>... lists) {
+        protected List<Long> doInBackground(List<Eczane>... lists) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
 
-            ArrayList<EczaneActivity> newList = new ArrayList<>(lists[0]);
+            ArrayList<Eczane> newList = new ArrayList<>(lists[0]);
 
 
-            List<Long> res =  medDao.insertEczanes(newList.toArray(new EczaneActivity[0]));
+            List<Long> res =  medDao.insertEczanes(newList.toArray(new Eczane[0]));
             return res;
         }
     }

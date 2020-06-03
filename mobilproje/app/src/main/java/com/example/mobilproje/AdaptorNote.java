@@ -12,13 +12,13 @@ import java.util.Date;
 import java.util.List;
 
 public class AdaptorNote extends BaseAdapter {
-    List<NotActivity> datas;
+    List<Note> datas;
     Context context;
 
     TextView txt;
     TextView txtDate;
 
-    public AdaptorNote(List<NotActivity> datas, Context context) {
+    public AdaptorNote(List<Note> datas, Context context) {
         this.datas = datas;
         this.context = context;
 
@@ -49,7 +49,7 @@ public class AdaptorNote extends BaseAdapter {
         txtDate = view.findViewById(R.id.txtDate);
 
 
-        NotActivity note = datas.get(position);
+        Note note = datas.get(position);
 
 
 

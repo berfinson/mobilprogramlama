@@ -10,13 +10,13 @@ import android.widget.TextView;
 import java.util.List;
 
 public class AdaptorEczane extends BaseAdapter {
-    List<EczaneActivity> datas;
+    List<Eczane> datas;
     Context context;
 
     TextView txtname;
     TextView txtadress;
     TextView txttelefon;
-    public AdaptorEczane(List<EczaneActivity> datas, Context context) {
+    public AdaptorEczane(List<Eczane> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -45,7 +45,7 @@ public class AdaptorEczane extends BaseAdapter {
         txttelefon = view.findViewById(R.id.txtTelefon);
 
 
-        EczaneActivity eczane = datas.get(position);
+        Eczane eczane = datas.get(position);
 
         txtadress.setText(eczane.adres);
         txtname.setText(eczane.name);

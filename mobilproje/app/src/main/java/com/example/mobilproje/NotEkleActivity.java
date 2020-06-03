@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,10 +33,10 @@ public class NotEkleActivity extends AppCompatActivity {
 
     public void GoToNotlar(View view) {
 
-        NotActivity note = new NotActivity(editNote.getText().toString());
+        Note note = new Note(editNote.getText().toString());
 
         AddAllAsync addAllAsync = new AddAllAsync();
-        List<NotActivity> list = new ArrayList<>();
+        List<Note> list = new ArrayList<>();
         list.add(note);
         addAllAsync.execute(list);
 
@@ -48,17 +47,17 @@ public class NotEkleActivity extends AppCompatActivity {
     }
 
 
-    private class AddAllAsync extends AsyncTask<List<NotActivity>, Void, List<Long>> {
+    private class AddAllAsync extends AsyncTask<List<Note>, Void, List<Long>> {
 
         @Override
-        protected List<Long> doInBackground(List<NotActivity>... lists) {
+        protected List<Long> doInBackground(List<Note>... lists) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
 
-            ArrayList<NotActivity> newList = new ArrayList<>(lists[0]);
+            ArrayList<Note> newList = new ArrayList<>(lists[0]);
 
 
-            List<Long> res = medDao.insertNotes(newList.toArray(new NotActivity[0]));
+            List<Long> res = medDao.insertNotes(newList.toArray(new Note[0]));
             return res;
         }
     }

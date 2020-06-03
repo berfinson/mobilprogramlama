@@ -42,20 +42,20 @@ public class EczaneListActivity extends AppCompatActivity {
         GetAllAsync getAllAsync = new GetAllAsync();
         getAllAsync.execute();
     }
-    public class GetAllAsync extends AsyncTask<Void, Void, List<EczaneActivity>> {
+    public class GetAllAsync extends AsyncTask<Void, Void, List<Eczane>> {
 
         @Override
-        protected List<EczaneActivity> doInBackground(Void... voids) {
+        protected List<Eczane> doInBackground(Void... voids) {
 
             MedDao medDao = MedDatabase.getInstance(context).medDao();
-            List<EczaneActivity> meds = medDao.getAllEczanes();
+            List<Eczane> meds = medDao.getAllEczanes();
 
             Log.e("MED", String.valueOf(meds.size()));
             return meds;
         }
 
         @Override
-        protected void onPostExecute(final List<EczaneActivity> eczanes) {
+        protected void onPostExecute(final List<Eczane> eczanes) {
             super.onPostExecute(eczanes);
 
             AdaptorEczane adaptorEczane = new AdaptorEczane(eczanes, context);

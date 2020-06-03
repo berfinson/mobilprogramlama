@@ -12,19 +12,18 @@ interface MedDao {
     @Insert
     List<Long> insertAll(Medicine...meds);
     @Insert
-    List<Long> insertNotes(NotActivity...notes);
+    List<Long> insertNotes(Note...notes);
     @Insert
-    List<Long> insertEczanes(EczaneActivity...eczanes);
+    List<Long> insertEczanes(Eczane...eczanes);
 
-    @Query("SELECT * FROM Medicine")
+    @Query("SELECT * FROM medicine")
     public List<Medicine> getAllMedicines();
 
+    @Query("SELECT * FROM note")
+    public List<Note>getAllNotes();
 
-    @Query("SELECT * FROM NotActivity")
-    public List<NotActivity>getAllNotes();
-
-    @Query("SELECT * FROM EczaneActivity")
-   public List<EczaneActivity> getAllEczanes();
+    @Query("SELECT * FROM eczane")
+   public List<Eczane> getAllEczanes();
 
 
 }
