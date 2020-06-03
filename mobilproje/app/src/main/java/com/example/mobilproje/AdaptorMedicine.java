@@ -51,7 +51,7 @@ public class AdaptorMedicine extends BaseAdapter {
 
         Medicine medicine = datas.get(position);
 
-        Glide.with(context).load(medicine.image).centerInside().into(imageView);
+        Glide.with(context).load(medicine.image).into(imageView);
         txtDate.setText(medicine.date);
         txt.setText(medicine.name);
 
