@@ -15,9 +15,14 @@ public class AdaptorNote extends BaseAdapter {
     List<NotActivity> datas;
     Context context;
 
+    TextView txt;
+    TextView txtDate;
+
     public AdaptorNote(List<NotActivity> datas, Context context) {
         this.datas = datas;
         this.context = context;
+
+
     }
 
 
@@ -40,8 +45,8 @@ public class AdaptorNote extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflaterv = LayoutInflater.from(context);
         View view = layoutInflaterv.inflate(R.layout.listeitem_note, null);
-        TextView txt = view.findViewById(R.id.txtName);
-        TextView txtDate = view.findViewById(R.id.txtDate);
+        txt = view.findViewById(R.id.txtName);
+        txtDate = view.findViewById(R.id.txtDate);
 
 
         NotActivity note = datas.get(position);

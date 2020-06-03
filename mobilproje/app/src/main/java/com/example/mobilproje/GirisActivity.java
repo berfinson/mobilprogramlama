@@ -9,16 +9,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GirisActivity extends AppCompatActivity {
-    SharedPreferences preferences;//preferences referansı
+    SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
+    PrefHelper prefHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_giris);
+        prefHelper = PrefHelper.getInstance(this);
         
-        String mail = PrefHelper.getInstance(this).getString("mail");
+        String mail = prefHelper.getString("mail");
 
 
         if(mail != null){

@@ -11,17 +11,23 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
+    PrefHelper prefHelper;
+
+    EditText EditTextMail;
+    EditText EditTextSifre;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        String mail =   PrefHelper.getInstance(this).getString("mail");
-        String password =   PrefHelper.getInstance(this).getString("password");
+        prefHelper = PrefHelper.getInstance(this);
 
-        EditText EditTextMail = findViewById(R.id.EditTextMail);
+        String mail =  prefHelper.getString("mail");
+        String password =   prefHelper.getString("password");
 
-        EditText EditTextSifre = findViewById(R.id.EditTextSifre);
+        EditTextMail = findViewById(R.id.EditTextMail);
+        EditTextSifre = findViewById(R.id.EditTextSifre);
 
         EditTextMail.setText(mail);
         EditTextSifre.setText(password);
@@ -31,19 +37,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onclickGoToMain(View view) {
-        EditText EditTextMail = findViewById(R.id.EditTextMail);
+
         String mail = EditTextMail.getText().toString();
-        EditText EditTextSifre = findViewById(R.id.EditTextSifre);
         String sifre = EditTextSifre.getText().toString();
 
-        String mailS =  PrefHelper.getInstance(this).getString("mail");
-        String passwordS =  PrefHelper.getInstance(this).getString("password");
+        String mailS =  prefHelper.getString("mail");
+        String passwordS =  prefHelper.getString("password");
         if (mail.equalsIgnoreCase(mailS)&& sifre.equalsIgnoreCase(passwordS)) {
             Intent intent = new Intent(this, AnaMenuActivity.class);
             startActivity(intent);
         }
         else{
-            Toast.makeText(this,"Mail adresi yanlış",Toast.LENGTH_LONG).show();
+            prefHelper.showMessage("Mailiniz yanlış");
         }
     }
 }

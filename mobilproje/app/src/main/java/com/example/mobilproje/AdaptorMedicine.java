@@ -16,6 +16,8 @@ public class AdaptorMedicine extends BaseAdapter {
     List<Medicine> datas;
     Context context;
 
+    TextView txt;
+    TextView txtDate;
     public AdaptorMedicine(List<Medicine> datas, Context context) {
         this.datas = datas;
         this.context = context;
@@ -41,8 +43,8 @@ public class AdaptorMedicine extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflaterv = LayoutInflater.from(context);
         View view = layoutInflaterv.inflate(R.layout.listeitem_medicine, null);
-        TextView txt = view.findViewById(R.id.txtName);
-        TextView txtDate = view.findViewById(R.id.txtDate);
+        txt = view.findViewById(R.id.txtName);
+        txtDate = view.findViewById(R.id.txtDate);
         ImageView imageView = view.findViewById(R.id.img);
 
 

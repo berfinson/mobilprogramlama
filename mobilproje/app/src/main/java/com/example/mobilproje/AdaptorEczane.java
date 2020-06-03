@@ -13,6 +13,9 @@ public class AdaptorEczane extends BaseAdapter {
     List<EczaneActivity> datas;
     Context context;
 
+    TextView txtname;
+    TextView txtadress;
+    TextView txttelefon;
     public AdaptorEczane(List<EczaneActivity> datas, Context context) {
         this.datas = datas;
         this.context = context;
@@ -37,9 +40,9 @@ public class AdaptorEczane extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflaterv = LayoutInflater.from(context);
         View view = layoutInflaterv.inflate(R.layout.listitem_eczane, null);
-        TextView txtname = view.findViewById(R.id.txtEczane);
-        TextView txtadress = view.findViewById(R.id.txtAdress);
-        TextView txttelefon = view.findViewById(R.id.txtTelefon);
+        txtname = view.findViewById(R.id.txtEczane);
+        txtadress = view.findViewById(R.id.txtAdress);
+        txttelefon = view.findViewById(R.id.txtTelefon);
 
 
         EczaneActivity eczane = datas.get(position);

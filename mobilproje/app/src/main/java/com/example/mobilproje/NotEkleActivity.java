@@ -19,10 +19,13 @@ public class NotEkleActivity extends AppCompatActivity {
     EditText editNote;
     Context context;
 
+    PrefHelper prefHelper;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notekle);
+
+        prefHelper = PrefHelper.getInstance(this);
 
         editNote = findViewById(R.id.editTextNotEkle);
 
@@ -38,7 +41,7 @@ public class NotEkleActivity extends AppCompatActivity {
         list.add(note);
         addAllAsync.execute(list);
 
-        Toast.makeText(this, "Yeni Not Eklendi", Toast.LENGTH_LONG).show();
+        prefHelper.showMessage("Yeni Not Eklendi");
         finish();
 
 

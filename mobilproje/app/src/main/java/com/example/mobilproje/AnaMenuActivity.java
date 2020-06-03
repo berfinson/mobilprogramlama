@@ -23,6 +23,8 @@ public class AnaMenuActivity extends AppCompatActivity {
     Context context;
     ListView listView;
 
+    TextView txtusername;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +35,8 @@ public class AnaMenuActivity extends AppCompatActivity {
         getAllAsync.execute();
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String username = preferences.getString("username",null);
-        TextView txtusername = findViewById(R.id.txtusername);
+        String username = preferences.getString("username", null);
+        txtusername = findViewById(R.id.txtusername);
         txtusername.setText(username);
 
     }
@@ -104,7 +106,6 @@ public class AnaMenuActivity extends AppCompatActivity {
             });
         }
     }
-
 
 
 }

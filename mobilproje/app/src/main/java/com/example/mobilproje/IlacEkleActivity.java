@@ -24,10 +24,14 @@ public class IlacEkleActivity extends AppCompatActivity {
     Context context = this;
     EditText editName;
     EditText editUrl;
+
+    PrefHelper prefHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ilacekle);
+
+        prefHelper = PrefHelper.getInstance(this);
 
         btnSaatSec = (Button) findViewById(R.id.button_saat_sec);
         editName =  findViewById(R.id.edtName);
@@ -73,7 +77,7 @@ public class IlacEkleActivity extends AppCompatActivity {
          list.add(med);
         addAllAsync.execute(list);
 
-        Toast.makeText(this,"Yeni ilaç Eklendi",Toast.LENGTH_LONG).show();
+        prefHelper.showMessage("ilaç eklendi");
         finish();
 
 
