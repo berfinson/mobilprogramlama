@@ -75,14 +75,14 @@
                 android:layout_weight="1"
                 android:id="@+id/BtnIlaclar"
                 android:onClick="onclickGoToIlaclar"
-                android:src="@drawable/icon_health"
+                android:src="@drawable/imgmed"
 
                 />
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:src="@drawable/bg_pharmacy"
+                android:src="@drawable/imgpharmacy"
                 android:onClick="gotoEczane"
                 />
 
@@ -90,18 +90,18 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:src="@drawable/bg_note"
-                android:id="@+id/BtnNotlar"
+                android:src="@drawable/imgnote"
+                android:id="@+id/img"
                 android:onClick="onclickGoToNotlar"
                 />
 
             <ImageView
                 android:id="@+id/BtnIlacEkle"
-                android:layout_width="0dp"
+                android:layout_width="2dp"
                 android:layout_height="60dp"
-                android:src="@drawable/icon_user"
                 android:layout_weight="1"
                 android:onClick="onclickGoToProfile"
+                android:src="@drawable/imgprofile"
                 android:text="İlaç Ekle" />
 
 

@@ -87,7 +87,7 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/bg_pharmacy"
+            android:src="@drawable/imgpharmacy"
             android:text="Eczane"
             />
 
@@ -95,7 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/bg_note"
+            android:src="@drawable/imgnote"
             android:text="Notlar"
             android:onClick="onclickGoToNotlar"
             />

@@ -53,32 +53,34 @@
 
             <TextView
                 android:id="@+id/edtuseername"
-
-
+                style="@style/txt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center" />
 
             <TextView
-
                 android:id="@+id/edtmailadress"
-
-
+                style="@style/txt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:gravity="center" />
 
             <Button
+                android:id="@+id/btnGuncelle"
                 style="@style/btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Düzenle"
-                android:id="@+id/btnGuncelle"
                 android:onClick="onclickGuncel"
+                android:text="Düzenle"
 
                 />
 
 
             <LinearLayout
-
+                style="@style/card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -92,7 +94,7 @@
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:onClick="onclickGoToIlaclar"
-                    android:src="@drawable/icon_health"
+                    android:src="@drawable/imgmed"
 
                     />
 
@@ -103,7 +105,7 @@
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:onClick="onclickGoToNotlar"
-                    android:src="@drawable/bg_note" />
+                    android:src="@drawable/imgnote" />
 
                 <ImageView
                     android:id="@+id/BtnIlacEkle"
@@ -111,14 +113,14 @@
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:onClick="onclickGoToIlacEkle"
-                    android:src="@drawable/icon_back"
+                    android:src="@drawable/imgback"
                     android:text="İlaç Ekle" />
 
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:src="@drawable/icon_exit" />
+                    android:src="@drawable/imgexit" />
 
 
             </LinearLayout>

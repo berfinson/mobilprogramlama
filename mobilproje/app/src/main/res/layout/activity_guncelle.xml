@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,7 +41,21 @@
                 android:layout_height="wrap_content"
                 android:hint="Yeni Mail"
                 android:inputType="text" />
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgviewguncel">
 
+            </ImageView>
+            <Button
+                style="@style/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="slcimg"
+                android:text="Resim Seç" />
 
             <Button
                 style="@style/btn"
@@ -48,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="onclickGuncelle"
                 android:text="Kaydet" />
+
             <Button
                 style="@style/btn"
                 android:layout_width="match_parent"
