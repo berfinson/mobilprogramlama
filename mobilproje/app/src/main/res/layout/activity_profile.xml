@@ -111,14 +111,16 @@
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:onClick="onclickGoToIlacEkle"
+                    android:onClick="onclickGoToBack"
                     android:src="@drawable/imgback"
                     android:text="İlaç Ekle" />
 
                 <ImageView
+                    android:id="@+id/BtnExit"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
+                    android:onClick="onclickExit"
                     android:src="@drawable/imgexit" />
 
 
