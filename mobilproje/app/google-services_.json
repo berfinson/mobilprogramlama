@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "242203519356",
+    "firebase_url": "https://salutem-18b53.firebaseio.com",
+    "project_id": "salutem-18b53",
+    "storage_bucket": "salutem-18b53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242203519356:android:ccb4f6e55af58e5a4a5cf9",
+        "android_client_info": {
+          "package_name": "com.example.mobilproje"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242203519356-c21g0p542mb81f7rvbconn4kk36vnv2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApseBQ-IWeus18t5RcGOPRDpfscO0r8fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242203519356-c21g0p542mb81f7rvbconn4kk36vnv2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -31,8 +31,6 @@ public class LoginActivity extends AppCompatActivity {
 
         EditTextMail.setText(mail);
         EditTextSifre.setText(password);
-        Log.e("MED",mail);
-        Log.e("MED",password);
 
     }
 
