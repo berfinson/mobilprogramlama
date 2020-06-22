@@ -7,8 +7,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 public class LoginActivity extends AppCompatActivity {
     PrefHelper prefHelper;
@@ -18,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
@@ -31,6 +39,19 @@ public class LoginActivity extends AppCompatActivity {
 
         EditTextMail.setText(mail);
         EditTextSifre.setText(password);
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                String token = task.getResult().getToken();
+
+                Log.e("token", token);
+               prefHelper.showMessage(token);
+            }
+        });
+
+
+
 
     }
 
@@ -48,5 +69,7 @@ public class LoginActivity extends AppCompatActivity {
         else{
             prefHelper.showMessage("Mailiniz yanlış");
         }
+
     }
+
 }
