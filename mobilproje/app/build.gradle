@@ -40,5 +40,6 @@ dependencies {
     androidTestImplementation 'android.arch.persistence.room:testing:1.1.1'
     implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
     implementation 'com.google.firebase:firebase-messaging:20.2.1'
+    implementation 'com.google.firebase:firebase-analytics:17.4.3'
 
 }

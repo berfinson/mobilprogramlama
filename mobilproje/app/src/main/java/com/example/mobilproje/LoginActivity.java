@@ -40,15 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         EditTextMail.setText(mail);
         EditTextSifre.setText(password);
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-            @Override
-            public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                String token = task.getResult().getToken();
 
-                Log.e("token", token);
-               prefHelper.showMessage(token);
-            }
-        });
 
 
 
