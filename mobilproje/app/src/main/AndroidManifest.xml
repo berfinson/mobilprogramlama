@@ -40,6 +40,10 @@
         <activity android:name=".EczaneListActivity" />
         <activity android:name=".EczaneEkleActivity" />
         <activity android:name=".GuncelleActivity" />
+        <activity android:name=".RunActivity" />
+
+
+
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">

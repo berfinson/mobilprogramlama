@@ -105,6 +105,15 @@
                     android:layout_weight="1"
                     android:onClick="onclickGoToNotlar"
                     android:src="@drawable/imgnote" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/run"
+                    android:id="@+id/runing"
+                    android:onClick="GoToRun"
+
+                    />
 
                 <ImageView
                     android:id="@+id/BtnIlacEkle"

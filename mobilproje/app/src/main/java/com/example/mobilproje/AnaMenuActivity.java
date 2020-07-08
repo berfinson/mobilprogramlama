@@ -73,6 +73,14 @@ public class AnaMenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void GoToRun(View view) {
+
+            Intent intent = new Intent(this, RunActivity.class);
+            startActivity(intent);
+
+
+    }
+
 
     ///ASyn
 

@@ -95,4 +95,9 @@ public class ProfileActivity<context> extends AppCompatActivity {
 
 
     }
+
+    public void GoToRun(View view) {
+        Intent intent = new Intent(this, RunActivity.class);
+        startActivity(intent);
+    }
 }
