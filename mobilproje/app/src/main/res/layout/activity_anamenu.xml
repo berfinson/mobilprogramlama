@@ -21,11 +21,13 @@
        style="@style/card"
         >
         <com.github.siyamed.shapeimageview.CircularImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:src="@drawable/pp"
-            app:siBorderWidth="6dp"
-            app:siBorderColor=" #375EF6"/>
+        android:id="@+id/BtnIlacEkle"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/imgprofile"
+        app:siBorderWidth="6dp"
+        app:siBorderColor=" #375EF6"
+        android:onClick="onclickGoToProfile"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,14 +106,7 @@
 
                />
 
-            <ImageView
-                android:id="@+id/BtnIlacEkle"
-                android:layout_width="2dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:onClick="onclickGoToProfile"
-                android:src="@drawable/imgprofile"
-                android:text="İlaç Ekle" />
+
 
 
         </LinearLayout>

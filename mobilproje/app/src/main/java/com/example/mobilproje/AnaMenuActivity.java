@@ -82,6 +82,8 @@ public class AnaMenuActivity extends AppCompatActivity {
     }
 
 
+
+
     ///ASyn
 
     public class GetAllAsync extends AsyncTask<Void, Void, List<Medicine>> {
